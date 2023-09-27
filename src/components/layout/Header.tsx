@@ -1,23 +1,14 @@
+import { Search } from "@mui/icons-material";
 import { AppBar, Toolbar } from "@mui/material";
-import { Link } from "react-router-dom";
-
-const nav = [
-  { label: "Home", path: "/" },
-  { label: "Contactos", path: "contactos" },
-  { label: "Nuevo", path: "nuevo" },
-];
 
 export const Header = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar>
       <Toolbar>
-        <nav>
-          {nav.map((el) => (
-            <Link to={`${el.path}`} key={el.label}>
-              {el.label}{" "}
-            </Link>
-          ))}
-        </nav>
+        <h1 className="header__item">
+          Encuentra tu Banco
+          <Search />{" "}
+        </h1>
       </Toolbar>
     </AppBar>
   );

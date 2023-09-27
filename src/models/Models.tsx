@@ -1,7 +1,6 @@
-export interface ContactModel {
-  id: number;
-  name: string;
-  phone: string;
-  email: string;
-  city: string;
+export interface BankModel {
+  bankName: string;
+  description: number;
+  age: string;
+  url: string;
 }

@@ -1,12 +1,13 @@
-import { ApiContactContextProvider } from "../../context/ApiContactContext";
+import { Toolbar } from "@mui/material";
+import { BankList } from "../lists/BankList";
 import { Header } from "./Header";
-import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Outlet />
-    </div>
+      <Toolbar />
+      <BankList />
+    </>
   );
 };

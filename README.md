@@ -1,8 +1,8 @@
 # TO RUN DE APP WITHIN A DOCKER CONTAINER RUN THE FOLLOWING COMMANDS
 
 1. Go to /zurich-test dir
-2. Create the image: docker build -t zurich-test .
-3. Run the container: docker run -it -p 3000:3000 -v /app/node_modules -v .:/app zurich-test
+2. Create the image: docker build -t pagatodo-test .
+3. Run the container: docker run -it -p 3000:3000 -v /app/node_modules -v .:/app pagatodo-test
 
 Install dependencies ONLY while running the container:
 

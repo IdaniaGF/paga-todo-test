@@ -1,23 +1,17 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 2 |   background-color: $primary-light-30;
+ *   |                     ^^^^^^^^^^^^^^^^^
+ *   '
+ *   scss\App.scss 2:21  root stylesheet */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 2 \2502    background-color: $primary-light-30;\d\a   \2502                      ^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\App.scss 2:21  root stylesheet";
 }
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em rgba(97, 218, 251, 0.6666666667));
-}
-
-/*# sourceMappingURL=App.css.map */
