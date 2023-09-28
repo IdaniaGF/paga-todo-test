@@ -15,9 +15,14 @@ export const BankList = () => {
 
   return (
     <>
-      <Grid container spacing={2} alignItems={"stretch"}>
+      <Grid
+        container
+        spacing={2}
+        alignItems={"stretch"}
+        data-testid="bank-list"
+      >
         {isLoading || banks.length === 0 ? (
-          <SkeletonCard num={6} />
+          <SkeletonCard />
         ) : (
           banks.map((bank) => <BankCard key={bank.url} {...bank} />)
         )}

@@ -8,6 +8,8 @@ export interface GenericModalProps extends ModalWrapperProps {
   description?: string | string[];
   /** The modal type.*/
   type: "error" | "success";
+  /** The id used to test this component.*/
+  testid?: string;
 }
 
 const iconType = {
@@ -24,10 +26,11 @@ export const GenericModal = ({
   type,
   open,
   children,
+  testid,
 }: GenericModalProps) => {
   return (
     <ModalWrapper open={open}>
-      <div className={type}>
+      <div className={type} data-testid={testid}>
         {iconType[type]}
         <p>{title}</p>
         {typeof description == "string" ? (

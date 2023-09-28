@@ -8,7 +8,7 @@ interface ModalErrorProps extends Omit<GenericModalProps, "type"> {
 /** A modal to display some error messages when something fail. Is wrapped by a {@link GenericModal}, render a {@link Button} to allow close the modal.*/
 export const ModalError = ({ handleClose, ...elseProps }: ModalErrorProps) => {
   return (
-    <GenericModal type="error" {...elseProps}>
+    <GenericModal type="error" {...elseProps} testid="modal-error">
       <Button onClick={handleClose} variant="contained" size="small">
         Aceptar
       </Button>

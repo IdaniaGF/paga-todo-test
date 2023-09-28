@@ -13,14 +13,16 @@ interface handleErrorType {
   message: string | string[];
 }
 
-/**
- * BankContext contain the global status of the bank list, a loader which indicates if the data is being requested, and a handleError object, which allow to open and close error Modals.
- */
-export const BankContext = React.createContext<{
+export interface BankContextValues {
   banks: BankModel[];
   isLoading: boolean;
   handleError: handleErrorType;
-}>({
+}
+
+/**
+ * BankContext contain the global status of the bank list, a loader which indicates if the data is being requested, and a handleError object, which allow to open and close error Modals.
+ */
+export const BankContext = React.createContext<BankContextValues>({
   banks: [],
   isLoading: false,
   handleError: { open: false, close: () => {}, message: "" },

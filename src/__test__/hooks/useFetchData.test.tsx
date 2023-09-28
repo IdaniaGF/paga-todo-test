@@ -1,10 +1,10 @@
 //import { renderHook, act } from "@testing-library/react-hooks";
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
-import { useFetchData } from "../hooks/useFetchData";
+//import axios from "axios";
+//import MockAdapter from "axios-mock-adapter";
+//import { useFetchData } from "../../hooks/useFetchData";
 
 // Mock Axios
-const mockAxios = new MockAdapter(axios);
+//const mockAxios = new MockAdapter(axios);
 
 /* describe("useFetchData", () => {
   afterEach(() => {

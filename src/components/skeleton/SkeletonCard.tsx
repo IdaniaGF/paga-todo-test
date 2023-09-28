@@ -10,11 +10,11 @@ interface SkeletonCardProps {
  * Display a list of skeleton cards to use while is waiting the response of a fetch request.
  * An array of numbers is created to iterate and render the skeleton card.
  */
-export const SkeletonCard = ({ num = 5 }: SkeletonCardProps) => {
+export const SkeletonCard = ({ num = 6 }: SkeletonCardProps) => {
   const cardsNum = [...Array(num).keys()];
 
   return cardsNum.map((el) => (
-    <GridCard key={el}>
+    <GridCard key={el} testid="skeleton-card">
       <Skeleton
         variant="rounded"
         className="card__image"
