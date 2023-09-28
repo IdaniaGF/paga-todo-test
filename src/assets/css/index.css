@@ -450,20 +450,21 @@ template {
 }
 
 /*TEXT*/
-.text-center, .modal, .card {
+.text-center, .modal {
   text-align: center;
 }
 
 /*BORDER*/
-.r-15, .modal, .card img, .card__image, .card {
+.r-15, .modal, .card--bank__image, .card, .card--bank {
   border-radius: 1.25rem;
 }
 
 /*SIZING*/
-.p-4, .modal, .card {
+.p-4, .modal, .card, .card--bank {
   padding: 1rem;
 }
 
+/*POSITIONING*/
 /*COLORING*/
 .success {
   color: #2e7d32;
@@ -473,20 +474,26 @@ template {
   color: #2e7d32;
 }
 
-.card {
+.card, .card--bank {
   background-color: rgba(174, 242, 212, 0.3);
-  transition: all 0.2s;
+  color: "inherit";
   height: 100%;
 }
-.card img, .card__image {
-  max-height: 10rem;
-  max-width: 70vw;
-  border-radius: 1rem;
+
+.card--bank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.2s;
+  height: 15rem;
 }
-.card__row {
-  margin-top: 1rem;
+.card--bank__image {
+  max-height: 8rem;
+  max-width: 12rem;
 }
-.card:hover {
+.card--bank:hover {
   transform: scale(1.02);
   background-color: #bf928a;
   color: #2e2e2e;

@@ -1,6 +1,8 @@
 export interface BankModel {
+  /**The name of the bank. */
   bankName: string;
+  /**The bank slogan. */
   description: number;
-  age: string;
+  /**The logo of the bank. */
   url: string;
 }

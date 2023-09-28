@@ -7,6 +7,9 @@ interface handleErrorType {
   message: string | string[];
 }
 
+/**This hook make a request to the server. Return an array with four items, a fetch function and a boolean which indicates when the response is waiting, a handleSuccess object and a handleError object. This hook allow to handle success or error response to open and close modals.
+ * @param initialData the initial value of the data response
+ */
 export const useFetchWithModalHandler = <DataType>(
   initialData: DataType
 ): [typeof fetch, boolean, typeof handleSuccess, typeof handleError] => {

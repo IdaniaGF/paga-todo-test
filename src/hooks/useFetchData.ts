@@ -2,20 +2,21 @@ import { AxiosError, AxiosResponse } from "axios";
 import * as React from "react";
 
 interface ResponseType<DataType> {
+  /**The data that is expecting to get from the request*/
   data: DataType;
+  /**If true then the request failed*/
   error: boolean;
+  /**Some error message that the server can send throught the response*/
   messageError?: string;
 }
 
+/**This hook make a request to the server. Return an array with two items, a fetch function and a boolean which indicates when the response is waiting.
+ * @param initialData the initial value of the data response
+ */
 export const useFetchData = <DataType>(
   initialData: DataType
 ): [typeof fetch, boolean] => {
   const [isLoading, setIsLoading] = React.useState(false);
-  /* const [response, setResponse] = React.useState<ResponseType<DataType>>({
-    data: initialData,
-    error: false,
-    messageError: undefined,
-  }); */
 
   const fetch = async (
     fetcher: () => Promise<AxiosResponse<DataType> | AxiosError>
@@ -28,7 +29,6 @@ export const useFetchData = <DataType>(
         error: false,
         data: axiosResp.data,
       };
-      //setResponse((prev) => ({ ...prev, data: axiosResp.data }));
     } else if ("message" in axiosResp) {
       setIsLoading(false);
       return {
@@ -36,12 +36,6 @@ export const useFetchData = <DataType>(
         data: initialData,
         messageError: axiosResp.message,
       };
-      /* setResponse((prev) => ({
-        ...prev,
-        error: true,
-        messageError:
-          "Ocurrió algún error al cargar la página, refresque la página o inténtelo más tarde",
-      })); */
     } else {
       return {
         error: true,

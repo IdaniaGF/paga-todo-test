@@ -1,11 +1,16 @@
 import { Skeleton } from "@mui/material";
-import { GridCard } from "../cards/Card";
+import { GridCard } from "../cards/GridCard";
 
 interface SkeletonCardProps {
-  num: number;
+  /**The number of card to display */
+  num?: number;
 }
 
-export const SkeletonCard = ({ num }: SkeletonCardProps) => {
+/**
+ * Display a list of skeleton cards to use while is waiting the response of a fetch request.
+ * An array of numbers is created to iterate and render the skeleton card.
+ */
+export const SkeletonCard = ({ num = 5 }: SkeletonCardProps) => {
   const cardsNum = [...Array(num).keys()];
 
   return cardsNum.map((el) => (

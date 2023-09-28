@@ -1,6 +1,7 @@
 import { Search } from "@mui/icons-material";
 import { AppBar, Toolbar } from "@mui/material";
 
+/** A fast header to display the name of the app */
 export const Header = () => {
   return (
     <AppBar>

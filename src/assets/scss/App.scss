@@ -15,6 +15,21 @@
   padding: map-get($sizes, 4);
 }
 
+/*POSITIONING*/
+
+@mixin flex-container(
+  $direction: row,
+  $justify: start,
+  $align: stretch,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
 /*COLORING*/
 
 .success {
@@ -26,21 +41,27 @@
 
 // CARDS
 
-.card {
-  @extend .text-center, .r-15, .p-4;
-  background-color: $primary-light-30;
-  transition: all 0.2s;
+@mixin cardMix($backgroud-color, $color: "inherit") {
+  @extend .r-15, .p-4;
+  background-color: $backgroud-color;
+  color: $color;
   height: 100%;
-  img,
+}
+
+.card {
+  @include cardMix($primary-light-30);
+}
+
+.card--bank {
+  @extend .card;
+  @include flex-container(column, center, center, 0.8rem);
+  transition: all 0.2s;
+  height: 15rem;
+
   &__image {
     @extend .r-15;
-    max-height: 10rem;
-    max-width: 70vw;
-    border-radius: 1rem;
-  }
-
-  &__row {
-    margin-top: 1rem;
+    max-height: 8rem;
+    max-width: 12rem;
   }
 
   &:hover {

@@ -1,12 +1,14 @@
 import { BankModel } from "../../models/Models";
-import { GridCard } from "./Card";
-
+import { GridCard } from "./GridCard";
+/**
+ * BankCard is a custom card wrapped by GridCard, displays the bank info.
+ */
 export const BankCard = (props: BankModel) => {
   const { bankName, description, url } = props;
 
   return (
-    <GridCard>
-      <img src={url} alt={bankName} className="card__image" />
+    <GridCard classNameModifier="--bank">
+      <img src={url} alt={bankName} className="card--bank__image" />
       <h3 className="card__row">{bankName}</h3>
       <p className="card__row">{description}</p>
     </GridCard>

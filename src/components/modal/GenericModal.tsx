@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
-import { ModalWrapper } from "./ModalWrapper";
+import { ModalWrapper, ModalWrapperProps } from "./ModalWrapper";
 import { CheckCircle, Cancel } from "@mui/icons-material";
 
-export interface GenericModalProps {
+export interface GenericModalProps extends ModalWrapperProps {
+  /** The title of the Modal.*/
   title: string;
+  /** The description of the Modal.*/
   description?: string | string[];
+  /** The modal type.*/
   type: "error" | "success";
-  open: boolean;
-  children?: ReactNode | ReactNode[];
 }
 
 const iconType = {
@@ -15,6 +15,9 @@ const iconType = {
   error: <Cancel />,
 };
 
+/**
+ * This Generic Modal render a modal with a transparent dark Backdrop. Is wrapped by a {@link ModalWrapper}. Display a title, a description and an icon according to the modal type. It can be used either show success operation info or error descriptions.
+ */
 export const GenericModal = ({
   title,
   description,

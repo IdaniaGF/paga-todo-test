@@ -3,8 +3,7 @@ import { BankModel } from "../models/Models";
 import { BanksAPI } from "../api/BanksApi";
 import { useFetchData } from "../hooks/useFetchData";
 /**
- * BankFetcher is the function that will
- * @returns
+ * BankFetcher is the function that will be executed to make fetch request.
  */
 const BankFetcher = async () => await new BanksAPI().getBankList();
 
@@ -14,6 +13,9 @@ interface handleErrorType {
   message: string | string[];
 }
 
+/**
+ * BankContext contain the global status of the bank list, a loader which indicates if the data is being requested, and a handleError object, which allow to open and close error Modals.
+ */
 export const BankContext = React.createContext<{
   banks: BankModel[];
   isLoading: boolean;
@@ -24,6 +26,9 @@ export const BankContext = React.createContext<{
   handleError: { open: false, close: () => {}, message: "" },
 });
 
+/**
+ * BankContextProvider provides of the bankList state. After the first render, is checked if there is persistence data in the localStorage set the bakList state to the persistence data, otherwise, a get request is executed. Then if the result is success, store the bankList data response in stored in the localStorage. If the result is error, then the handleError state change the open property to true to allow the user can display a modal error. This handleError state, also provides of a handleClose function to change again the state of the error and an error message obtained from the request.
+ */
 export const BankContextProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
@@ -36,7 +41,6 @@ export const BankContextProvider: React.FC<React.PropsWithChildren> = ({
     message: "",
   });
 
-  //const [getBanks, isLoading, handleSuccess, handleError] = useFetchWithModalHandler<BankModel[]>([]);
   const [getBanks, isLoading] = useFetchData<BankModel[]>([]);
 
   React.useEffect(() => {
@@ -56,21 +60,12 @@ export const BankContextProvider: React.FC<React.PropsWithChildren> = ({
     }
   }, []);
 
-  /* React.useEffect(() => {
-    if (!handleSuccess.open && handleSuccess.data.length > 0) {
-      setBanks(handleSuccess.data);
-      localStorage.setItem("bankList", JSON.stringify(handleSuccess.data));
-    }
-  }, [handleSuccess, handleError]); */
-
   return (
     <BankContext.Provider
       value={{
         banks,
         isLoading,
         handleError,
-        //handleSuccess,
-        //handleError,
       }}
     >
       {children}

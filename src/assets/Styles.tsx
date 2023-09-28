@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-
+/**The custom theme of the application, it uses {@link createTheme} function from Material-UI */
 export const theme = createTheme({
   typography: {
     fontFamily: '"Libre Franklin", sans-serif',
