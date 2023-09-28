@@ -1,12 +1,39 @@
-.card {
-  background-color: $primary-light-30;
-  padding: 1rem;
-  border-radius: 1rem;
-  text-align: center;
-  transition: all 0.2s;
+// UTILITIES
 
+/*TEXT*/
+.text-center {
+  text-align: center;
+}
+
+/*BORDER*/
+.r-15 {
+  border-radius: map-get($sizes, 5);
+}
+
+/*SIZING*/
+.p-4 {
+  padding: map-get($sizes, 4);
+}
+
+/*COLORING*/
+
+.success {
+  color: $color-success;
+}
+.success {
+  color: $color-success;
+}
+
+// CARDS
+
+.card {
+  @extend .text-center, .r-15, .p-4;
+  background-color: $primary-light-30;
+  transition: all 0.2s;
+  height: 100%;
   img,
   &__image {
+    @extend .r-15;
     max-height: 10rem;
     max-width: 70vw;
     border-radius: 1rem;
@@ -17,8 +44,35 @@
   }
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     background-color: $secondary-main;
+    color: $neutral-dark;
+  }
+}
+
+// MODALS
+
+@mixin modalMix($width) {
+  @extend .text-center, .r-15, .p-4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  width: $width;
+  height: fit-content;
+}
+
+.modal {
+  @include modalMix(400px);
+  background-color: $secondary-dark;
+  .MuiSvgIcon-root {
+    font-size: 50px;
+  }
+}
+
+.MuiAppBar-root {
+  .MuiToolbar-root {
     color: $neutral-dark;
   }
 }

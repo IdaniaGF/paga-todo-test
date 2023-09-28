@@ -2,7 +2,7 @@ import { BankModel } from "../../models/Models";
 import { GridCard } from "./Card";
 
 export const BankCard = (props: BankModel) => {
-  const { bankName, description, age, url } = props;
+  const { bankName, description, url } = props;
 
   return (
     <GridCard>

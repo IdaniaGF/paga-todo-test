@@ -449,12 +449,34 @@ template {
   display: none;
 }
 
-.card {
-  background-color: rgba(230, 199, 242, 0.3);
-  padding: 1rem;
-  border-radius: 1rem;
+/*TEXT*/
+.text-center, .modal, .card {
   text-align: center;
+}
+
+/*BORDER*/
+.r-15, .modal, .card img, .card__image, .card {
+  border-radius: 1.25rem;
+}
+
+/*SIZING*/
+.p-4, .modal, .card {
+  padding: 1rem;
+}
+
+/*COLORING*/
+.success {
+  color: #2e7d32;
+}
+
+.success {
+  color: #2e7d32;
+}
+
+.card {
+  background-color: rgba(174, 242, 212, 0.3);
   transition: all 0.2s;
+  height: 100%;
 }
 .card img, .card__image {
   max-height: 10rem;
@@ -465,8 +487,26 @@ template {
   margin-top: 1rem;
 }
 .card:hover {
-  transform: scale(1.03);
-  background-color: #65f0b2;
+  transform: scale(1.02);
+  background-color: #bf928a;
+  color: #2e2e2e;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  width: 400px;
+  height: fit-content;
+  background-color: #40201b;
+}
+.modal .MuiSvgIcon-root {
+  font-size: 50px;
+}
+
+.MuiAppBar-root .MuiToolbar-root {
   color: #2e2e2e;
 }
 
@@ -484,6 +524,10 @@ template {
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3 {
@@ -493,7 +537,7 @@ h3 {
 
 body {
   padding: 1rem;
-  box-sizing: border-box;
+  position: relative;
 }
 
 @media (max-width: 600px) {

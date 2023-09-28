@@ -1,21 +1,19 @@
-import {
-    createTheme
-  } from '@mui/material'
+import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
-    typography: {
-      fontFamily: '"Libre Franklin", sans-serif'
+  typography: {
+    fontFamily: '"Libre Franklin", sans-serif',
+  },
+  palette: {
+    primary: {
+      main: "#8abfa8",
+      light: "#aef2d4",
+      dark: "#537365",
     },
-    palette: {
-      primary: {
-        main: '#CE7DEF',
-        light: '#E6C7F2',
-        dark: '#613A70'
-      },
-      secondary: {
-        main: '#65F0B2',
-        light: '#AEF2D4',
-        dark: '#2F7053'
-      },
-    }
-  })
+    secondary: {
+      main: "#bf928a",
+      light: "#d6a490",
+      dark: "#40201b",
+    },
+  },
+});

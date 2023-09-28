@@ -1,13 +1,13 @@
-import { Button } from "@mui/material";
+import { ReactNode } from "react";
 import { ModalWrapper } from "./ModalWrapper";
 import { CheckCircle, Cancel } from "@mui/icons-material";
 
-interface GenericModalProps {
+export interface GenericModalProps {
   title: string;
   description?: string | string[];
   type: "error" | "success";
   open: boolean;
-  handleClose: () => void;
+  children?: ReactNode | ReactNode[];
 }
 
 const iconType = {
@@ -20,7 +20,7 @@ export const GenericModal = ({
   description,
   type,
   open,
-  handleClose,
+  children,
 }: GenericModalProps) => {
   return (
     <ModalWrapper open={open}>
@@ -29,13 +29,11 @@ export const GenericModal = ({
         <p>{title}</p>
         {typeof description == "string" ? (
           <p>{description}</p>
-        ) : typeof description == "array" ? (
+        ) : typeof description == "object" ? (
           description.map((el) => <p key={el}>{el}</p>)
         ) : null}
-        <Button type="button" onClick={handleClose}>
-          Aceptar
-        </Button>
       </div>
+      {children}
     </ModalWrapper>
   );
 };

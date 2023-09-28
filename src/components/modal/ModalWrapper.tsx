@@ -1,4 +1,4 @@
-import { Modal, Paper } from "@mui/material";
+import { Modal } from "@mui/material";
 import { ReactNode } from "react";
 
 interface ModalWrapperProps {
@@ -8,8 +8,8 @@ interface ModalWrapperProps {
 
 export const ModalWrapper = ({ open, children }: ModalWrapperProps) => {
   return (
-    <Modal open={open} className="modal">
-      <Paper>{children}</Paper>
+    <Modal open={open}>
+      <div className="modal">{children}</div>
     </Modal>
   );
 };

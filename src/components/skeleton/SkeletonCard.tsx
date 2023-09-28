@@ -6,9 +6,10 @@ interface SkeletonCardProps {
 }
 
 export const SkeletonCard = ({ num }: SkeletonCardProps) => {
-  const cardsNum = Array(num).fill(true);
-  return cardsNum.map((el, i) => (
-    <GridCard key={i}>
+  const cardsNum = [...Array(num).keys()];
+
+  return cardsNum.map((el) => (
+    <GridCard key={el}>
       <Skeleton
         variant="rounded"
         className="card__image"

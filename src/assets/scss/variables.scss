@@ -1,10 +1,29 @@
-$primary-main: #ce7def;
-$primary-light: #e6c7f2;
-$primary-light-30: rgba(230, 199, 242, 0.3);
-$primary-dark: #613a70;
-$secondary-main: #65f0b2;
-$secondary-light: #aef2d4;
-$secondary-dark: #2f7053;
+$primary-main: #8abfa8;
+$primary-light: #aef2d4;
+$primary-light-30: rgba(174, 242, 212, 0.3);
+$primary-dark: #537365;
+$secondary-main: #bf928a;
+$secondary-light: #d6a490;
+$secondary-light-30: rgba(214, 164, 144, 0.3);
+$secondary-dark: #40201b;
 $neutral-light: #cdc9ce;
 $neutral-medium: #686569;
 $neutral-dark: #2e2e2e;
+$color-error: #d32f2f;
+$color-success: #2e7d32;
+$color-warning: #ed6c02;
+
+$sizes: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 2rem,
+  100%: 100%,
+  50%: 50%,
+  25%: 25%,
+  15%: 15%,
+);

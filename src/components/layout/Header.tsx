@@ -5,10 +5,8 @@ export const Header = () => {
   return (
     <AppBar>
       <Toolbar>
-        <h1 className="header__item">
-          Encuentra tu Banco
-          <Search />{" "}
-        </h1>
+        <Search />
+        <h1 className="header__item">Encuentra tu Banco</h1>
       </Toolbar>
     </AppBar>
   );
